@@ -45,8 +45,8 @@
     </role>
     <schema id="9" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2019-02-20.23:43:52.677</IntrospectionTimestamp>
-      <IntrospectionStateNumber>558</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-02-22.00:30:31.752</IntrospectionTimestamp>
+      <IntrospectionStateNumber>566</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -76,34 +76,101 @@
       <ObjectId>16393</ObjectId>
       <StateNumber>557</StateNumber>
     </table>
-    <column id="17" parent="16" name="id">
+    <table id="17" parent="9" name="user_role">
+      <ObjectId>16403</ObjectId>
+      <StateNumber>566</StateNumber>
+    </table>
+    <table id="18" parent="9" name="usr">
+      <ObjectId>16406</ObjectId>
+      <StateNumber>566</StateNumber>
+    </table>
+    <column id="19" parent="16" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>557</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="18" parent="16" name="tag">
+    <column id="20" parent="16" name="tag">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="19" parent="16" name="text">
+    <column id="21" parent="16" name="text">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="20" parent="16" name="message_pkey">
+    <index id="22" parent="16" name="message_pkey">
       <ObjectId>16399</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="21" parent="16" name="message_pkey">
+    <key id="23" parent="16" name="message_pkey">
       <ObjectId>16400</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>message_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="17" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>564</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="25" parent="17" name="roles">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>564</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="26" parent="17" name="fkfpm8swft53ulq2hl11yplpr5">
+      <ObjectId>16414</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16406</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="27" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>565</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="28" parent="18" name="active">
+      <Position>2</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>565</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="29" parent="18" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>565</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="18" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>565</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="31" parent="18" name="usr_pkey">
+      <ObjectId>16412</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="18" name="usr_pkey">
+      <ObjectId>16413</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>usr_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
   </database-model>
