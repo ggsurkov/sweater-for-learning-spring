@@ -31,7 +31,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/main")
+    @PostMapping("/add")
     public String add(
             @AuthenticationPrincipal User user,
             @RequestParam String text,
